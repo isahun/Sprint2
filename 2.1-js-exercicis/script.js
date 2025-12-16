@@ -53,7 +53,7 @@ const printMessage = (message) => {
     setTimeout(() => { console.log(message)}, 3000);
 };
 
-printMessage("Irene");
+printMessage("Tulips");
 
 // Exercici 1.2: OPERADOR TERNARI
 
@@ -127,9 +127,94 @@ function parellOSenar (array) {
 }
 
 const array2 = [3, 5, 9, 12, 33, 56, 73];
-console.log(parellOSenar(array2));
+parellOSenar(array2);
 
+//EXERCICI 1.3: CALLBACKS
 
+//Nivell 1
 
+//Exercici 1. Callback bàsic: Escriu una funció anomenada processar que accepti dos paràmetres: un nombre i una funció de callback. La funció processar ha d'invocar la funció de callback, passant el nombre com a paràmetre.
 
+function processar (num, imprimir) {
+    imprimir(num)
+}
 
+function imprimir(num) {
+    console.log(num);
+}
+
+processar(3, imprimir);
+
+//Exercici 2. Callbacks amb operacions matemàtiques: Escriu una funció calculadora que accepti tres paràmetres: dos nombres i una funció de callback. La funció calculadora ha d'invocar la funció de callback amb els dos nombres com a paràmetres. Després, crida calculadora amb una funció que faci la suma dels dos nombres.
+
+function calculadora(num1, num2, suma) {
+    suma(num1, num2);
+}
+
+function suma(num1, num2) {
+    const resultat = num1 + num2;
+    console.log(resultat);
+}
+
+calculadora(17, 39, suma);
+
+//Nivell 2
+
+//Exercici 3. Ús de callbacks en funcions asíncrones: Escriu una funció esperarISaludar que accepti dos paràmetres: un nom i una funció de callback. La funció ha d'esperar 2 segons i llavors invocar la funció de callback, passant el nom com a paràmetre.
+
+function esperarISaludar (nom, cridarNom) {
+    cridarNom(nom);
+}
+
+function cridarNom(nom) {
+setTimeout(() => { console.log(nom)}, 2000)
+}
+
+esperarISaludar("Cristina", cridarNom);
+
+//Exercici 4. Callbacks amb arrays: Escriu una funció processarElements que accepti dos paràmetres: un array i una funció de callback. La funció processarElements ha d'invocar la funció de callback per cada element de l'array.
+
+function processarElements(array, mostraElement) {
+    array.forEach(mostraElement);
+}
+
+function mostraElement(element) {
+    console.log(element);
+}
+
+const array3 = [3, 7, 13, 17, 23, 27];
+
+processarElements(array3, mostraElement);
+
+//Nivell 3
+
+//Exercici 5. Escriu una funció processarCadena que accepti dos paràmetres: una cadena de caràcters i una funció de callback. La funció processarCadena ha de convertir la cadena a majúscules i llavors invocar la funció de callback amb la cadena transformada.
+
+function processarCadena (cadena, processarMajus) {
+    const novaCadena = cadena.toUpperCase();
+    
+    processarMajus(novaCadena);
+}
+
+function processarMajus (novaCadena) {
+    console.log(novaCadena);
+}
+
+const cadenaInput = "APTX4869";
+processarCadena(cadenaInput, processarMajus);
+
+//EXERCICI 1.4: REST & SPREAD OPERATORS
+
+//Nivell 1
+
+//Exercici 1. Operador Spread en Arrays: Crea dues arrays, array1 i array2. Utilitza l'operador spread per a crear una tercera array que contingui tots els elements de array1 i array2.
+
+const arr1 = [-4, 70, 43, 56];
+const arr2 = ["Croquetes", "Olives", "Aperol", "Truita de patates"];
+const arr3 = [...arr1, ...arr2];
+
+console.log(arr3);
+
+//Exercici 2. Operador Rest en Funcions: Crea una funció 'suma' que utilitzi l'operador rest per a acceptar un nombre indeterminat d'arguments i retornar la seva suma.
+
+function suma() {}
