@@ -217,4 +217,15 @@ console.log(arr3);
 
 //Exercici 2. Operador Rest en Funcions: Crea una funció 'suma' que utilitzi l'operador rest per a acceptar un nombre indeterminat d'arguments i retornar la seva suma.
 
-function suma() {}
+function suma(a, b, ...c) {
+    let resultat2 = a + b;
+
+    c.forEach(n => {
+        resultat2 += n;
+    });
+
+    return resultat2;
+}
+
+console.log(suma(1,2,3,5,17));
+
