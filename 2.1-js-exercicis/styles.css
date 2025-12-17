@@ -1,0 +1,25 @@
+/* Estil general de la pàgina */
+body {
+    padding: 0 30px;
+    line-height: 1.5rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Títol principal */
+h1 {
+    color: rgb(174, 56, 1);
+}
+
+/* Subtítols */
+h2 {
+    margin-top: 2rem;
+}
+
+h3 {
+    margin-top: 1.5rem;
+}
+
+/* Paràgrafs */
+p {
+    margin-bottom: 1rem;
+}
