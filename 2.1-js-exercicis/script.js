@@ -390,7 +390,7 @@ console.log(print);
 
 let numeros =  [1, 2, 3, 4, 5, 6];
 
-const numerosPair = numeros.filter((number) => number % 2 == 0)
+const numerosPair = numeros.filter((number) => number % 2 === 0)
 
 console.log(numerosPair);
 
@@ -400,14 +400,14 @@ console.log(numerosPair);
 
 let obj = {
     nom: "Ona",
-    edat: "25",
+    edat: 25,
     ciutat: "Barcelona"
 }
 
 let message = "";
 
 for (let x in obj){
-    message += obj[x] + "\n";
+    message += `${x}: ${obj[x]} \n`;
 }
 
 console.log(message);
@@ -416,17 +416,91 @@ console.log(message);
 
 let anotherNumArray = [1, 2, 3, 4, 5, 6];
 
-let printed = ""
 for (let x of anotherNumArray) {
+    console.log(x);
     if (x === 5) break;
-    
 }
-
-
 
 //Nivell 3
 
 //Exercici 6. for-of amb index: Utilitza un bucle for-of per a imprimir a la consola cada element de l'array i la seva posició (index): let noms = ['Anna', 'Bernat', 'Clara']
 
+const arrayNomsEx6 = ["Anna", "Bernat", "Clara"];
+let i = -1;
+
+for (let x of arrayNomsEx6) {
+    i++
+    let toPrint = `${x} [${i}] \n`
+    console.log(toPrint)
+}
+
+//solució pro
+for(let [index, x] of arrayNomsEx6.entries()) { //entries genera parella d valors index-element, primer assignem noms a aquestes 2 vars
+    console.log(`${x} [${index}] \n`)
+}
+
+
+//EXERCICI 1.7: PROMISES I ASYNC/AWAIT
+
+//Nivell 1
+
+//Exercici 1: Creació d'una promesa. Crea una promesa que es resolgui després de 2 segons i retorni el text 'Hola, món'.
+
+let promesa = new Promise(function(resolve) {
+    setTimeout(() => {
+        resolve("Hola món");
+    }, 2000);
+});
+
+//Exercici 2: Utilització d'una promesa. Utilitza .then per imprimir el resultat a la consola.
+
+promesa.then(
+    resultat => console.log(resultat)
+)
+
+//Exercici 3: Promesa amb reject. Crea una promesa que es resolgui si l'input és 'Hola' i es rebutgi en qualsevol altre cas.
+
+let input = "Adéu";
+
+let promesa2 = new Promise (function(resolve, reject) {
+    if (input === "Hola") {
+        resolve("Input correcte: " + input);
+    } else {
+        reject("Input incorrecte");
+    }
+})
+
+promesa2.then (
+    ok => console.log(ok),
+    err => console.log(err)
+)
+
+//Exercici 4: async / await. Escriu una funció asíncrona que esperi la promesa i imprimeixi el resultat.
+
+/*
+async function imprimirPromesa(promesa) {
+    let toPrint4 = await promesa;
+    console.log(toPrint4);
+}
+
+imprimirPromesa(promesa2);
+*/
+
+//Nivell 2
+
+//Exercici 5: Gestió d'errors amb try / catch. Modifica la funció anterior per capturar errors.
+
+async function imprimirPromesa(promesa) {
+        try {
+            let printOk = await promesa;
+            console.log(printOk);
+        } catch (error){
+            console.log(error);
+        }
+}
+
+imprimirPromesa(promesa2);
+
+//Exercici 6: Exercici 6: Promise.all. Crea dues promeses que es resolguin en 2 i 3 segons i espera-les amb Promise.all.
 
 
