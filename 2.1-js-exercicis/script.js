@@ -503,4 +503,37 @@ imprimirPromesa(promesa2);
 
 //Exercici 6: Exercici 6: Promise.all. Crea dues promeses que es resolguin en 2 i 3 segons i espera-les amb Promise.all.
 
+const promesa3 = new Promise(function(resolve) {
+    setTimeout(() => {
+        resolve("Dos segons");
+    }, 2000);
+});
 
+const promesa4 = new Promise(function(resolve) {
+    setTimeout(() => {
+        resolve("Tres segons");
+    }, 3000);
+});
+
+//Versió amb then i check:
+
+/*
+Promise.all([promesa3, promesa4])
+    .then((ok) => {
+        console.log(`Promeses complertes amb èxit`, ok);
+    })
+
+    .catch((error) => { 
+        console.log(`Promeses no complertes`, error); });
+*/
+
+async function funcioImprimir(promesa00, promesa01) {
+    try {
+        const resultats = await Promise.all([promesa00, promesa01]);
+        console.log(`Promeses complertes amb èxit`, resultats)
+    } catch (error) {
+        console.log(`Promeses no complertes`, error)
+    }
+}
+
+funcioImprimir(promesa3, promesa4);
