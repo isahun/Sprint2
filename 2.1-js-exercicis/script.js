@@ -536,4 +536,4 @@ async function funcioImprimir(promesa00, promesa01) {
     }
 }
 
-funcioImprimir(promesa3, promesa4);
+funcioImprimir(promesa3, promesa4); 
