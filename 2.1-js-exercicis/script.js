@@ -200,7 +200,7 @@ function processarMajus (novaCadena) {
     console.log(novaCadena);
 }
 
-const cadenaInput = "APTX4869";
+const cadenaInput = "aptx4869";
 processarCadena(cadenaInput, processarMajus);
 
 //EXERCICI 1.4: REST & SPREAD OPERATORS
