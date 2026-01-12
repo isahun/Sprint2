@@ -248,12 +248,12 @@ console.log(objecte2);
 
 //Exercici 4. Rest en Destructuring: Crea una array amb diversos elements. Utilitza destructuring i l'operador rest per a assignar els primers dos elements a variables, i després assignar la resta dels elements a una tercera variable.
 
-const fellowship = ["Frodo", "Gandalf", "Aragorn", "Merry", "Pippin", "Gimli", "Legolas"];
+const fellowship = ["Frodo", "Sam", "Gandalf", "Aragorn", "Merry", "Pippin", "Gimli", "Legolas"];
 
-const [frodo, gandalf, ...mellon] = fellowship;
+const [frodo, sam, ...mellon] = fellowship;
 
 console.log(frodo);
-console.log(gandalf);
+console.log(sam);
 console.log(mellon);
 
 //Nivell 3
@@ -288,15 +288,15 @@ console.log(flors);
 
 //Exercici 1. Map: Teniu un array de números [1, 2, 3, 4]. Crea una nova array que contingui el quadrat de cada número.
 
-const primeNums = [1, 3, 5, 7, 11];
-const primeSq = primeNums.map(square);
+const numArr = [1, 2, 3, 4];
+const numSq = numArr.map(square);
 
 function square(number) {
     return number * number;
 }
 
-console.log(primeNums);
-console.log(primeSq);
+console.log(numArr);
+console.log(numSq);
 
 //Exercici 2. Filter: Teniu una array de números [1, 2, 3, 4]. Crea una nova array que només contingui els números parells.
 
