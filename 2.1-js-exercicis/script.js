@@ -11,7 +11,7 @@ console.log(add(22, 11));
 
 //Exercici 2: Funció de fletxa sense paràmetres: Crea una funció de fletxa anomenada randomNumber que no necessiti paràmetres i que retorni un número aleatori entre 0 i 100.
 
-const randomNumber = () => parseInt(Math.random() * 100);
+const randomNumber = () => Math.floor(Math.random() * 100);
 console.log(randomNumber())
 
 //Exercici 3: Ús de 'this' en les funcions de fletxa: Crea una classe person que tingui una propietat name i una funció greet que utilitzi una funció de fletxa. La funció ha d'imprimir una salutació que inclogui el nom de la persona. Per exemple: console.log(Hola, ${this.name});.
@@ -62,7 +62,7 @@ printMessage("Tulips");
 //Exercici 1: Operador ternari bàsic: Escriu una funció potConduir que accepti l'edat com a paràmetre i utilitzi l'operador ternari per determinar si l'usuari pot conduir. Si l'edat és 18 o més, ha de retornar 'Pots conduir'. Si no, ha de retornar 'No pots conduir'.
 
 function potConduir (edat) {
-    let majorEdat = edat > 18;
+    let majorEdat = edat >= 18;
     
     return majorEdat ? "Pots conduir" : "No pots conduir";
 }
@@ -118,9 +118,9 @@ function parellOSenar (array) {
     let message = null;
 
     for (let i = 0; i < array.length; i++) {
-        let pairNum = (array[i] % 2);
+        let pairNum = (array[i] % 2 === 0);
 
-        message = (pairNum == 0) ? `El número ${array[i]} és parell.` : `El número ${array[i]} és senar.`;
+        message = (pairNum) ? `El número ${array[i]} és parell.` : `El número ${array[i]} és senar.`;
 
         console.log(message);
     }
@@ -217,14 +217,8 @@ console.log(arr3);
 
 //Exercici 2. Operador Rest en Funcions: Crea una funció 'suma' que utilitzi l'operador rest per a acceptar un nombre indeterminat d'arguments i retornar la seva suma.
 
-function suma(a, b, ...c) {
-    let resultat2 = a + b;
-
-    c.forEach(n => {
-        resultat2 += n;
-    });
-
-    return resultat2;
+function suma(...a) {
+    a.reduce((total, n) => total + n, 0)
 }
 
 console.log(suma(1,2,3,5,17));
@@ -361,7 +355,11 @@ function checkTen (number) {
     return number > 10;
 }
 
-console.log(arrayEx6.every(checkTen));
+const everyOver10 = arrayEx6.every(checkTen)
+const someOver10 = arrayEx6.some(checkTen)
+
+console.log(everyOver10);
+console.log(someOver10);
 
 //EXERCICI 1.6: ARRAY LOOPS
 
