@@ -1,33 +1,33 @@
 # Sprint 2.1 – JavaScript Basics
 
-Aquest repositori conté els **exercicis del Sprint 2.1 del bootcamp de Frontend**, centrats en els fonaments de JavaScript.
+This repository contains **exercises from Sprint 2.1**, aimed to practice the fundamentals of JavaScript.
 
-## 📂 Contingut
-El sprint inclou exercicis pràctics sobre:
-- Funcions (clàssiques i arrow functions)
-- Paràmetres i retorn de valors
-- Ús de `this`
+## 📂 Content
+This sprints includes exercises covering:
+- Functions (classic and arrow functions)
+- Parameters and return values
+- Use of `this`
 - Loops (`for`)
 - Callbacks
-- Funcions asíncrones bàsiques (`setTimeout`)
-- Manipulació de dades amb JavaScript
+- Basic asynchronous functions (`setTimeout`)
+- Data manipulation with JavaScript
 
-## 🎯 Objectius del Sprint
-- Entendre la sintaxi bàsica de JavaScript
-- Aprendre a crear i utilitzar funcions
-- Familiaritzar-se amb arrow functions
-- Introduir el concepte de callbacks
-- Escriure codi clar i llegible
+## 🎯 Sprint Goals
+- Understand basic JavaScript syntax
+- Learn to create and use functions
+- Get familiar with arrow functions
+- Introduce the concept of callback
+- Write clear and readable code
 
-## 🛠️ Tecnologies utilitzades
+## 🛠️ Technologies Used 
 - JavaScript (Vanilla)
-- HTML (per a proves)
-- Navegador web (console)
+- HTML (for testing purposes)
+- Web browser (console)
 
-## ▶️ Com executar els exercicis
-1. Clona el repositori
-2. Obre els fitxers `.html` al navegador  
-3. Consulta els resultats a la **consola del navegador**
+## ▶️ How to run the exercises
+1. Clone the repository
+2. Open the file `.html` live server
+3. Check results in the **browser console**
 
 ---
 
