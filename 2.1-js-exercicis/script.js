@@ -39,9 +39,9 @@ const array = [1, 3, 6, 8, 10, 13, 16, 19, 21];
 
 const printNumbers = (array) => {
     for (let i = 0; i < array.length; i++) {
-        console.log(array[i]);
+        console.log(array[i])
     }
-}
+};
 
 printNumbers(array);
 
@@ -62,9 +62,7 @@ printMessage("Tulips");
 //Exercici 1: Operador ternari bàsic: Escriu una funció potConduir que accepti l'edat com a paràmetre i utilitzi l'operador ternari per determinar si l'usuari pot conduir. Si l'edat és 18 o més, ha de retornar 'Pots conduir'. Si no, ha de retornar 'No pots conduir'.
 
 function potConduir (edat) {
-    let majorEdat = edat >= 18;
-    
-    return majorEdat ? "Pots conduir" : "No pots conduir";
+    return edat >= 18 ? "Pots conduir" : "No pots conduir";
 }
 
 console.log(potConduir(14));
@@ -73,11 +71,7 @@ console.log(potConduir(19));
 //Exercici 2: Ús amb operadors de comparació: Escriu una expressió que utilitzi l'operador ternari per determinar quin dels dos nombres donats (num1 i num2) és més gran. Si num1 és més gran, retorna 'num1 és més gran'. Si no, retorna 'num2 és més gran'.
 
 function numGran (num1, num2) {
-    let num1gran = num1 > num2;
-    
-    if (num1 !== num2) {
-        return num1gran ? "num1 és més gran" : "num2 és més gran";
-    } else { return "Els dos nombres són iguals"; }
+    return num1 === num2 ? "Els dos nombres són iguals" : num1 > num2 ? "num1 és més gran" : "num2 és més gran";
 }
 
 console.log(numGran(42, 43));
@@ -115,12 +109,10 @@ console.log(trobarMaxim(4, 6, 15));
 //Exercici 4: Operador ternari dins un bucle: Escriu una funció parOImpar que accepti un array de números i utilitzi un bucle per a recórrer l'array. Dins del bucle, utilitza l'operador ternari per a determinar si cada número és parell o imparell.
 
 function parellOSenar (array) {
-    let message = null;
-
     for (let i = 0; i < array.length; i++) {
         let pairNum = (array[i] % 2 === 0);
 
-        message = (pairNum) ? `El número ${array[i]} és parell.` : `El número ${array[i]} és senar.`;
+        let message = (pairNum) ? `El número ${array[i]} és parell.` : `El número ${array[i]} és senar.`;
 
         console.log(message);
     }
@@ -151,10 +143,7 @@ function calculadora(num1, num2, suma) {
     suma(num1, num2);
 }
 
-function suma(num1, num2) {
-    const resultat = num1 + num2;
-    console.log(resultat);
-}
+const suma = (num1, num2) => console.log(num1 + num2);
 
 calculadora(17, 39, suma);
 
@@ -218,7 +207,7 @@ console.log(arr3);
 //Exercici 2. Operador Rest en Funcions: Crea una funció 'suma' que utilitzi l'operador rest per a acceptar un nombre indeterminat d'arguments i retornar la seva suma.
 
 function suma(...a) {
-    a.reduce((total, n) => total + n, 0)
+    return a.reduce((total, n) => total + n, 0)
 }
 
 console.log(suma(1,2,3,5,17));
@@ -285,9 +274,7 @@ console.log(flors);
 const numArr = [1, 2, 3, 4];
 const numSq = numArr.map(square);
 
-function square(number) {
-    return number * number;
-}
+const square = number => number * number;
 
 console.log(numArr);
 console.log(numSq);
@@ -295,11 +282,7 @@ console.log(numSq);
 //Exercici 2. Filter: Teniu una array de números [1, 2, 3, 4]. Crea una nova array que només contingui els números parells.
 
 const arrayFour = [1, 2, 3, 4];
-const arrayPair = arrayFour.filter(findPairs);
-
-function findPairs (number) {
-    return number % 2 == 0;
-}
+const arrayPair = arrayFour.filter(number => number % 2 === 0);
 
 console.log(arrayFour);
 console.log(arrayPair);
@@ -309,9 +292,7 @@ console.log(arrayPair);
 const arrayTen = [1, 10 , 8, 11];
 const arrayOverTen = arrayTen.find(findTen);
 
-function findTen (number) {
-    return number > 10;
-}
+const findTen = number => number > 10;
 
 console.log(arrayTen);
 console.log(arrayOverTen);
@@ -320,11 +301,7 @@ console.log(arrayOverTen);
 
 const arrayReduce = [13, 7, 8, 21];
 
-const result = arrayReduce.reduce(numberSum);
-
-function numberSum (total, number) { //total és el valor començant x l'esquerra
-    return total + number;
-}
+const result = arrayReduce.reduce((total, number) => total + number, 0);
 
 console.log(arrayReduce);
 console.log(result);
@@ -340,7 +317,7 @@ console.log(result);
 const arrayEx5 = [1, 3, 7, 10 ,15, 17, 11, 5, 8, 12, 9]; 
 
 function processNums (array) {
-    return ((array.filter((number) => number >= 10)).map((number) => number * 2)).reduce((total,  number) => total + number);
+    return array.filter(number => number >= 10).map(number => number * 2).reduce((total,  number) => total + number);
 }
 
 console.log(processNums(arrayEx5));
@@ -351,9 +328,7 @@ console.log(processNums(arrayEx5));
 
 const arrayEx6 = [11, 12, 13, 14];
 
-function checkTen (number) {
-    return number > 10;
-}
+const checkTen = (number) => number > 10;
 
 const everyOver10 = arrayEx6.every(checkTen)
 const someOver10 = arrayEx6.some(checkTen)
@@ -369,11 +344,8 @@ console.log(someOver10);
 
 let noms = ["Anna", "Bernat", "Clara"];
 
-noms.forEach(printNames);
+noms.forEach(nom => console.log(nom));
 
-function printNames(nom) {
-    console.log(nom);
-}
 
 //Exercici 2. for-of: Teniu una array de noms. Utilitza un bucle for-of per a imprimir cada nom a la consola: let noms = ['Anna', 'Bernat', 'Clara'];
 
